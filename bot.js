@@ -13,14 +13,18 @@ var bot = new Discord.Client({
     token: auth.token,
     autorun: true
 });
-
+console.log("bit", bot.connected);
+console.log("bot again", bot);
 bot.on('ready', function (evt) {
     console.log("bot.on");
     logger.info('Connected');
     logger.info('Logged in as: ');
     logger.info(bot.username + ' - (' + bot.id + ')');
 });
-
+bot.on('error', function(evt, ab){
+    console.log("evt", evt)
+    console.log("ab", ab);
+})
 bot.on('message', function (user, userID, channelID, message, evt) {
     var serverID = bot.channels[channelID].guild_id;
     var roles = bot.servers[serverID].roles;
