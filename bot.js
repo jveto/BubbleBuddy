@@ -8,7 +8,7 @@ logger.add(new logger.transports.Console, {
     colorize: true
 });
 logger.level = 'debug';
-
+console.log("running");
 var bot = new Discord.Client({
     token: auth.token,
     autorun: true
