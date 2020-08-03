@@ -8,6 +8,7 @@ client.on('ready', () => {
 client.on('message', msg =>{
     if(msg.content == 'Ping'){
         msg.reply('Pong!');
+        msg.channel.send('Pong again!');
     }
 })
 
