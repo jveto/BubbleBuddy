@@ -15,6 +15,7 @@ var bot = new Discord.Client({
 });
 
 bot.on('ready', function (evt) {
+    console.log("bot.on");
     logger.info('Connected');
     logger.info('Logged in as: ');
     logger.info(bot.username + ' - (' + bot.id + ')');
@@ -81,3 +82,4 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         }
     }
 })
+console.log("end");
