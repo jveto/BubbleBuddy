@@ -75,18 +75,23 @@ client.on('message', msg =>{
                         break;
                 }
                 break;
-            case "DAD JOKE":
-                max = DadJokes.length;
-                rng = Math.floor(Math.random() * max);
-                console.log("Telling joke: ", DadJokes[rng]);
-                msg.channel.send(DadJokes[rng]);
+            case "JOKE":
+                switch(args[1].toUpperCase()){
+                    case "DAD":
+                        max = DadJokes.length;
+                        rng = Math.floor(Math.random() * max);
+                        console.log("Telling joke: ", DadJokes[rng]);
+                        msg.channel.send(DadJokes[rng]);
+                        break;
+                    case "NSFW":
+                        max = NsfwJokes.length;
+                        rng = Math.floor(Math.random() * max);
+                        console.log("Telling joke: ", NsfwJokes[rng]);
+                        msg.channel.send(NsfwJokes[rng]);
+                        break;
+                }
                 break;
-            case "NSFW JOKE":
-                max = NsfwJokes.length;
-                rng = Math.floor(Math.random() * max);
-                console.log("Telling joke: ", NsfwJokes[rng]);
-                msg.channel.send(NsfwJokes[rng]);
-                break;
+                
         }
     }
 })
