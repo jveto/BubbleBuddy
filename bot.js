@@ -78,7 +78,7 @@ client.on('message', msg =>{
                 let max = Jokes.length;
                 let rng = Math.floor(Math.random() * max);
                 console.log("Telling joke: ", Jokes[rng]);
-                bot.channel.send(Jokes[rng]);
+                msg.channel.send(Jokes[rng]);
                 break;
         }
     }
