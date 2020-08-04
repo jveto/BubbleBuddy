@@ -89,6 +89,12 @@ client.on('message', msg =>{
                         console.log("Telling joke: ", NsfwJokes[rng]);
                         msg.channel.send(NsfwJokes[rng]);
                         break;
+                    default:
+                        var AllJokes = NsfwJokes.concat(DadJokes);
+                        max = AllJokes.length;
+                        rng = Math.floor(Math.random() * max);
+                        console.log("Telling joke: ", AllJokes[rng]);
+                        msg.channel.send(AllJokes[rng]);
                 }
                 break;
                 
