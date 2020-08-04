@@ -73,12 +73,17 @@ client.on('message', msg =>{
                         break;
                 }
                 break;
-            case "JOKE":
-                let min = 0;
-                let max = Jokes.length;
+            case "DAD JOKE":
+                let max = DadJokes.length;
                 let rng = Math.floor(Math.random() * max);
-                console.log("Telling joke: ", Jokes[rng]);
-                msg.channel.send(Jokes[rng]);
+                console.log("Telling joke: ", DadJokes[rng]);
+                msg.channel.send(DadJokes[rng]);
+                break;
+            case "NSFW JOKE":
+                let max = NsfwJokes.length;
+                let rng = Math.floor(Math.random() * max);
+                console.log("Telling joke: ", NsfwJokes[rng]);
+                msg.channel.send(NsfwJokes[rng]);
                 break;
         }
     }
@@ -136,7 +141,7 @@ function AddGameRole(gameName, userId, bot, roleName){
 
 client.login(auth.token);
 
-var Jokes = [
+var DadJokes = [
     "What did the drummer call his twin daughters? Anna one, Anna two!",
     "How did Darth Vader know what Luke got him for Christmas? He felt his presents!",
     "Did you hear about the chameleon who couldn't change color? He had a reptile dysfunction.",
@@ -384,3 +389,6 @@ var Jokes = [
     "What did the fish say when he hit the wall? Dam.",
     "Is this pool safe for diving? It deep ends."
 ];
+var NsfwJokes = [
+    "What do you call Annie after first blood? A woman."
+]
