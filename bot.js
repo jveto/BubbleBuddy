@@ -5,6 +5,8 @@ const client = new Discord.Client();
 var guild = client.guilds.cache;
 var curGuild; 
 
+let max;
+let rng;
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -74,14 +76,14 @@ client.on('message', msg =>{
                 }
                 break;
             case "DAD JOKE":
-                let max = DadJokes.length;
-                let rng = Math.floor(Math.random() * max);
+                max = DadJokes.length;
+                rng = Math.floor(Math.random() * max);
                 console.log("Telling joke: ", DadJokes[rng]);
                 msg.channel.send(DadJokes[rng]);
                 break;
             case "NSFW JOKE":
-                let max = NsfwJokes.length;
-                let rng = Math.floor(Math.random() * max);
+                max = NsfwJokes.length;
+                rng = Math.floor(Math.random() * max);
                 console.log("Telling joke: ", NsfwJokes[rng]);
                 msg.channel.send(NsfwJokes[rng]);
                 break;
