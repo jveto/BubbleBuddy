@@ -76,27 +76,30 @@ client.on('message', msg =>{
                 }
                 break;
             case "JOKE":
-                switch(args[1].toUpperCase()){
-                    case "DAD":
-                        max = DadJokes.length;
-                        rng = Math.floor(Math.random() * max);
-                        console.log("Telling joke: ", DadJokes[rng]);
-                        msg.channel.send(DadJokes[rng]);
-                        break;
-                    case "NSFW":
-                        max = NsfwJokes.length;
-                        rng = Math.floor(Math.random() * max);
-                        console.log("Telling joke: ", NsfwJokes[rng]);
-                        msg.channel.send(NsfwJokes[rng]);
-                        break;
-                    default:
-                        var AllJokes = NsfwJokes.concat(DadJokes);
-                        max = AllJokes.length;
-                        rng = Math.floor(Math.random() * max);
-                        console.log("Telling joke: ", AllJokes[rng]);
-                        msg.channel.send(AllJokes[rng]);
+                if(args.length > 1){
+                    switch(args[1].toUpperCase()){
+                        case "DAD":
+                            max = DadJokes.length;
+                            rng = Math.floor(Math.random() * max);
+                            console.log("Telling joke: ", DadJokes[rng]);
+                            msg.channel.send(DadJokes[rng]);
+                            break;
+                        case "NSFW":
+                            max = NsfwJokes.length;
+                            rng = Math.floor(Math.random() * max);
+                            console.log("Telling joke: ", NsfwJokes[rng]);
+                            msg.channel.send(NsfwJokes[rng]);
+                            break;
+                    }
                 }
-                break;
+                else{
+                    var AllJokes = NsfwJokes.concat(DadJokes);
+                    max = AllJokes.length;
+                    rng = Math.floor(Math.random() * max);
+                    console.log("Telling joke: ", AllJokes[rng]);
+                    msg.channel.send(AllJokes[rng]);
+                    AllJokes = [];
+                }
                 
         }
     }
