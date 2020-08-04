@@ -8,15 +8,15 @@ var curGuild;
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
-    console.log(guild)
+    //console.log(guild)
     curGuild = guild.find(name => name.name == 'Bubbles');
-    console.log(curGuild.id);
-    var roles = curGuild.roles.cache.forEach(x => {
-        console.log(x);
-    })
-    guild.forEach(x => {
-        //console.log(x.roles);
-    })
+    //console.log(curGuild.id);
+    // var roles = curGuild.roles.cache.forEach(x => {
+    //     console.log(x);
+    // })
+    // guild.forEach(x => {
+    //     //console.log(x.roles);
+    // })
 })
 
 
