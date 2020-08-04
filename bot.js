@@ -42,6 +42,12 @@ client.on('message', msg =>{
                     case "VALORANT":
                         AddGameRole("VALORANT", msg.author.id, msg, "Valorant Gang");
                         break;
+                    case "LEAGUE":
+                        AddGameRole("LEAGUE", msg.author.id, msg, "Legends of League");
+                        break;
+                    case "LEAGUE OF LEGENDS":
+                        AddGameRole("LEAGUE OF LEGENDS", msg.author.id, msg, "Legends of League");
+                        break;
                 }
                 break;
             case "LEAVE":
@@ -58,6 +64,12 @@ client.on('message', msg =>{
                         break;
                     case "VALORANT":
                         RemoveGameRole("VALORANT", msg.author.id, msg, "Valorant Gang");
+                        break;
+                    case "LEAGUE":
+                        AddGameRole("LEAGUE", msg.author.id, msg, "Legends of League");
+                        break;
+                    case "LEAGUE OF LEGENDS":
+                        AddGameRole("LEAGUE OF LEGENDS", msg.author.id, msg, "Legends of League");
                         break;
                 }
                 break;
