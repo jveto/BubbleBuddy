@@ -1,3 +1,4 @@
+var auth = require('./auth.json');
 const Discord = require('discord.js');
 const client = new Discord.Client();
 //const guild = new Discord.Guild(client, null);
@@ -114,7 +115,7 @@ function AddGameRole(gameName, userId, bot, roleName){
 }
 
 
-client.login('NzM5NjcwODUwNTQ2MDQwOTE0.Xyd2KQ.IYYXCP9shmRnUSNMFrxskjNoDuQ');
+client.login(auth.token);
 
 
 
