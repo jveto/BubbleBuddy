@@ -390,5 +390,6 @@ var DadJokes = [
     "Is this pool safe for diving? It deep ends."
 ];
 var NsfwJokes = [
-    "What do you call Annie after first blood? A woman."
+    "What do you call Annie after first blood? A woman.",
+    "Look in the mirror"
 ]
