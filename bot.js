@@ -27,6 +27,7 @@ client.on('rateLimit', obj =>{
 
 var img = 1;
 
+// Set a new icon every - 172800000 is 2 days.
 setInterval(function(){
     if(img == 1){
         curGuild.setIcon('./images/bubbles.png').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
@@ -175,7 +176,6 @@ function AddGameRole(gameName, userId, bot, roleName){
         }
     };
 }
-
 
 client.login(auth.token);
 
