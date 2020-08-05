@@ -21,6 +21,23 @@ client.on('ready', () => {
     // })
 })
 
+client.on('rateLimit', obj =>{
+    console.log(obj);
+})
+
+var img = 1;
+
+setInterval(function(){
+    if(img == 1){
+        curGuild.setIcon('./images/bubbles.png').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
+        img = 2;
+    }
+    else if (img == 2){
+        curGuild.setIcon('./images/bubbles2.png').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
+        img = 1;
+    }
+}, 60000)
+
 client.on('message', msg =>{
     if(msg.author.username == "BubbleBuddy") return;
     //console.log(msg);
@@ -108,7 +125,8 @@ client.on('message', msg =>{
                 break;
             case "ICON":
                 if(msg.author.username == "ChiFutbol"){
-                    curGuild.setIcon('/images/bubbles.png').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
+                    console.log("Attempting to set icon");
+                    curGuild.setIcon('./images/bubbles.png').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
                 }
                 
         }
