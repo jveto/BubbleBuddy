@@ -50,6 +50,9 @@ client.on('message', msg =>{
                     case "LEAGUE OF LEGENDS":
                         AddGameRole("LEAGUE OF LEGENDS", msg.author.id, msg, "Legends of League");
                         break;
+                    case "FALL GUYS":
+                        AddGameRole("FALL GUYS", msg.author.id, msg, "Fallers");
+                        break;
                 }
                 break;
             case "LEAVE":
@@ -72,6 +75,9 @@ client.on('message', msg =>{
                         break;
                     case "LEAGUE OF LEGENDS":
                         RemoveGameRole("LEAGUE OF LEGENDS", msg.author.id, msg, "Legends of League");
+                        break;
+                    case "FALL GUYS":
+                        RemoveGameRole("FALL GUYS", msg.author.id, msg, "Fallers");
                         break;
                 }
                 break;
