@@ -21,7 +21,6 @@ client.on('ready', () => {
     // })
 })
 
-
 client.on('message', msg =>{
     if(msg.author.username == "BubbleBuddy") return;
     //console.log(msg);
@@ -105,6 +104,11 @@ client.on('message', msg =>{
                     console.log("Telling joke: ", AllJokes[rng]);
                     msg.channel.send(AllJokes[rng]);
                     AllJokes = [];
+                }
+                break;
+            case "ICON":
+                if(msg.author.username == "ChiFutbol"){
+                    curGuild.setIcon('/images/bubbles.png').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
                 }
                 
         }
