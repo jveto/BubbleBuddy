@@ -36,7 +36,7 @@ setInterval(function(){
         curGuild.setIcon('./images/bubbles2.png').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
         img = 1;
     }
-}, 60000)
+}, 172800000)
 
 client.on('message', msg =>{
     if(msg.author.username == "BubbleBuddy") return;
@@ -122,13 +122,7 @@ client.on('message', msg =>{
                     msg.channel.send(AllJokes[rng]);
                     AllJokes = [];
                 }
-                break;
-            case "ICON":
-                if(msg.author.username == "ChiFutbol"){
-                    console.log("Attempting to set icon");
-                    curGuild.setIcon('./images/bubbles.png').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
-                }
-                
+                break;                
         }
     }
 })
