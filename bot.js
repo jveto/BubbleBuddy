@@ -123,7 +123,9 @@ client.on('message', msg =>{
                     msg.channel.send(AllJokes[rng]);
                     AllJokes = [];
                 }
-                break;                
+                break;
+            case "INVOICE":
+                msg.channel.send(`What happened to the invoice <@${msg.author.id}>?!?!?!?!?!?!?!?`);
         }
     }
 })
