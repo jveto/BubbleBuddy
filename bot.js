@@ -125,7 +125,7 @@ client.on('message', msg =>{
                 }
                 break;
             case "INVOICE":
-                msg.channel.send(`What happened to the invoice <@${msg.author.id}>?!?!?!?!?!?!?!?`);
+                msg.channel.send(`What happened to the invoice <@$Scorpio>?!?!?!?!?!?!?!?`);
         }
     }
 })
