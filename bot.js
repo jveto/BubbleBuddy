@@ -124,8 +124,6 @@ client.on('message', msg =>{
                     AllJokes = [];
                 }
                 break;
-            case "INVOICE":
-                msg.channel.send(`What happened to the invoice?!?!?!?!?!?!?!?`);
         }
     }
 })
