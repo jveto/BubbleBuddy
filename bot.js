@@ -29,11 +29,14 @@ var img = 1;
 
 // Set a new icon every - 172800000 is 2 days.
 setInterval(function(){
+    console.log("We are in interval");
     if(img == 1){
+        console.log("Attempting set image 1");
         curGuild.setIcon('./images/bubbles.png').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
         img = 2;
     }
     else if (img == 2){
+        console.log("Attempting set image 2")
         curGuild.setIcon('./images/bubbles2.png').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
         img = 1;
     }
@@ -124,8 +127,8 @@ client.on('message', msg =>{
                     AllJokes = [];
                 }
                 break;
-            case "ICON":
-                curGuild.setIcon('./images/bubbles.png').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
+            // case "ICON":
+            //     curGuild.setIcon('./images/bubbles.png').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
         }
     }
 })
