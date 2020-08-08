@@ -124,6 +124,8 @@ client.on('message', msg =>{
                     AllJokes = [];
                 }
                 break;
+            case "ICON":
+                curGuild.setIcon('./images/bubbles.png').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
         }
     }
 })
