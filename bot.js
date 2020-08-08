@@ -8,10 +8,27 @@ var curGuild;
 let max;
 let rng;
 
+let img = 2;
+
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     //console.log(guild)
     curGuild = guild.find(name => name.name == 'Bubbles');
+
+    // Set a new icon every - 172800000 is 2 days.
+    setInterval(function(){
+        console.log("We are in interval");
+        if(img == 1){
+            console.log("Attempting set image 1");
+            curGuild.setIcon('./images/bubbles.png').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
+            img = 2;
+        }
+        else if (img == 2){
+            console.log("Attempting set image 2")
+            curGuild.setIcon('./images/bubbles2.png').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
+            img = 1;
+        }
+    }, 172800000)
     //console.log(curGuild.id);
     // var roles = curGuild.roles.cache.forEach(x => {
     //     console.log(x);
@@ -25,22 +42,9 @@ client.on('rateLimit', obj =>{
     console.log(obj);
 })
 
-var img = 1;
 
-// Set a new icon every - 172800000 is 2 days.
-setInterval(function(){
-    console.log("We are in interval");
-    if(img == 1){
-        console.log("Attempting set image 1");
-        curGuild.setIcon('./images/bubbles.png').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
-        img = 2;
-    }
-    else if (img == 2){
-        console.log("Attempting set image 2")
-        curGuild.setIcon('./images/bubbles2.png').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
-        img = 1;
-    }
-}, 172800000)
+
+
 
 client.on('message', msg =>{
     if(msg.author.username == "BubbleBuddy") return;
