@@ -8,7 +8,7 @@ var curGuild;
 let max;
 let rng;
 
-let img = 2;
+let img = 1;
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -26,6 +26,11 @@ client.on('ready', () => {
         else if (img == 2){
             console.log("Attempting set image 2")
             curGuild.setIcon('./images/bubbles2.png').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
+            img = 3;
+        }
+        else if (img == 3){
+            console.log("Attempting set image 3")
+            curGuild.setIcon('./images/bubbles3.png').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
             img = 1;
         }
     }, 172800000)
