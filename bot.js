@@ -9,7 +9,6 @@ let max;
 let rng;
 
 let img = 5;
-console.log("img is ", img);
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
