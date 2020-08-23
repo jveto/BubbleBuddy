@@ -8,7 +8,7 @@ var curGuild;
 let max;
 let rng;
 
-let img = 1;
+let img = 5;
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -17,21 +17,42 @@ client.on('ready', () => {
 
     // Set a new icon every - 172800000 is 2 days.
     setInterval(function(){
+        switch(img){
+            case 1:
+                console.log("Attempting set image 1");
+                curGuild.setIcon('./images/bubbles.png').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
+                img = 2;
+                
+            case 2:
+                console.log("Attempting set image 2")
+                curGuild.setIcon('./images/bubbles2.png').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
+                img = 3;
+                break;
+            case 3:
+                console.log("Attempting set image 3")
+                curGuild.setIcon('./images/bubbles3.png').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
+                img = 4;
+                break;
+            case 4:
+                console.log("Attempting set image 4")
+                curGuild.setIcon('./images/bubbles4.png').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
+                img = 5;
+                break;
+            case 5:
+                console.log("Attempting set image 5(gif)")
+                curGuild.setIcon('./images/bubbles5.gif').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
+                img = 1;
+                break;
+        }
         console.log("We are in interval");
         if(img == 1){
-            console.log("Attempting set image 1");
-            curGuild.setIcon('./images/bubbles.png').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
-            img = 2;
+            
         }
         else if (img == 2){
-            console.log("Attempting set image 2")
-            curGuild.setIcon('./images/bubbles2.png').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
-            img = 3;
+            
         }
         else if (img == 3){
-            console.log("Attempting set image 3")
-            curGuild.setIcon('./images/bubbles3.png').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
-            img = 1;
+            
         }
     }, 172800000)
     //console.log(curGuild.id);
