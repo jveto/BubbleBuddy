@@ -9,6 +9,7 @@ let max;
 let rng;
 
 let img = 5;
+console.log("img is ", img);
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -45,15 +46,6 @@ client.on('ready', () => {
                 break;
         }
         console.log("We are in interval");
-        if(img == 1){
-            
-        }
-        else if (img == 2){
-            
-        }
-        else if (img == 3){
-            
-        }
     }, 172800000)
     //console.log(curGuild.id);
     // var roles = curGuild.roles.cache.forEach(x => {
