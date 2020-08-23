@@ -15,7 +15,7 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     //console.log(guild)
     curGuild = guild.find(name => name.name == 'Bubbles');
-
+    curGuild.setIcon('./images/bubbles5.gif').then(updated => console.log("Updated server icon")).catch(console.log(console.error));
     // Set a new icon every - 172800000 is 2 days.
     setInterval(function(){
         switch(img){
