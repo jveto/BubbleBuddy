@@ -94,6 +94,9 @@ client.on('message', msg =>{
                     case "FALL GUYS":
                         AddGameRole("FALL GUYS", msg.author.id, msg, "Fallers");
                         break;
+                    case "AMONG US":
+                        AddGameRole("AMONG US", msg.author.id, msg, "Imposters");
+                        break;
                 }
                 break;
             case "LEAVE":
@@ -119,6 +122,9 @@ client.on('message', msg =>{
                         break;
                     case "FALL GUYS":
                         RemoveGameRole("FALL GUYS", msg.author.id, msg, "Fallers");
+                        break;
+                    case "AMONG US":
+                        RemoveGameRole("AMONG US", msg.author.id, msg, "Imposters");
                         break;
                 }
                 break;
